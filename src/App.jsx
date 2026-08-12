@@ -234,30 +234,32 @@ export default function App() {
   const showNav = !checkoutOpen && !successOrder && !operatorOpen;
 
   return (
-    <div className="font-sans bg-[#FBF6EF] min-h-screen pb-[70px]">
-      {content}
+    <div className="font-sans bg-[#EDE3D6] min-h-screen flex justify-center">
+      <div className="w-full max-w-[480px] bg-[#FBF6EF] min-h-screen relative shadow-[0_0_40px_rgba(0,0,0,0.06)]" style={{ paddingBottom: showNav ? 78 : 0 }}>
+        {content}
 
-      {showNav && (
-        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] flex items-center justify-around px-2 py-2.5 bg-white/97 backdrop-blur-md border-t border-[#F0E4D6] z-30">
-          {TABS.map((t) => {
-            const Icon = t.icon;
-            const active = nav === t.id;
-            return (
-              <button
-                key={t.id}
-                onClick={() => setNav(t.id)}
-                className="relative flex flex-col items-center gap-0.5 px-2 py-1"
-              >
-                <Icon size={20} strokeWidth={active ? 2.1 : 1.7} className={active ? "text-[#A93446]" : "text-[#B9A793]"} />
-                {t.id === "cart" && <Badge count={cartCount} />}
-                <span className={`text-[9.5px] ${active ? "text-[#A93446] font-semibold" : "text-[#B9A793]"}`}>
-                  {t.label}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      )}
+        {showNav && (
+          <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] flex items-center justify-around px-2 py-2.5 bg-white/97 backdrop-blur-md border-t border-[#F0E4D6] z-30">
+            {TABS.map((t) => {
+              const Icon = t.icon;
+              const active = nav === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setNav(t.id)}
+                  className="relative flex flex-col items-center gap-0.5 px-2 py-1"
+                >
+                  <Icon size={20} strokeWidth={active ? 2.1 : 1.7} className={active ? "text-[#A93446]" : "text-[#B9A793]"} />
+                  {t.id === "cart" && <Badge count={cartCount} />}
+                  <span className={`text-[9.5px] ${active ? "text-[#A93446] font-semibold" : "text-[#B9A793]"}`}>
+                    {t.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

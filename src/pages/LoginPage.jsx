@@ -107,7 +107,8 @@ export default function LoginPage({ onLogin, appLogo = "" }) {
   };
 
   return (
-    <div className="min-h-screen max-w-[430px] mx-auto flex flex-col items-center justify-center px-5 py-8 bg-[#FBF6EF]">
+    <div className="font-sans bg-[#EDE3D6] min-h-screen flex justify-center">
+    <div className="w-full max-w-[480px] min-h-screen bg-[#FBF6EF] flex flex-col items-center justify-center px-5 py-8 shadow-[0_0_40px_rgba(0,0,0,0.06)]">
       <div className="mb-3"><Logo size={72} src={appLogo} /></div>
       <div className="text-[26px] font-black text-[#4A2E22] mb-0.5">Dadajon Tort</div>
       <div className="text-[12px] text-[#9C8778] mb-6 text-center">Mazali tortlar va shirinliklar</div>
@@ -197,6 +198,7 @@ export default function LoginPage({ onLogin, appLogo = "" }) {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
