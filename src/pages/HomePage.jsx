@@ -1,11 +1,11 @@
-import { User, ChevronRight, CakeSlice, Cookie, Sparkles, Gift } from "lucide-react";
+import { User, ChevronRight, CakeSlice, Cookie, Croissant, Sparkles, Gift } from "lucide-react";
 import { CATEGORIES } from "../constants";
 import CakeCard from "../components/CakeCard";
 
 const CAT_ICONS = {
   Tortlar: CakeSlice,
   Kapkeyk: Cookie,
-  Piroglar: Cookie,
+  Piroglar: Croissant,
   Shirinliklar: Sparkles,
   Maxsus: Gift,
 };

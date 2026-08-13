@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import {
   ArrowLeft, QrCode as QrIcon, Package, Users, BarChart3,
-  Plus, Pencil, Trash2, Check, X, Loader2,
+  Plus, Pencil, Trash2, Check, X, Loader2, UtensilsCrossed,
 } from "lucide-react";
 import { fmt, ORDER_STATUS } from "../constants";
 import { operatorAPI } from "../services/api";
@@ -10,7 +10,7 @@ import { CakeThumb } from "../components/CakeCard";
 
 const TABS = [
   { id: "orders", label: "Buyurtmalar", icon: Package },
-  { id: "menu", label: "Menyu", icon: QrIcon },
+  { id: "menu", label: "Menyu", icon: UtensilsCrossed },
   { id: "operators", label: "Operatorlar", icon: Users },
   { id: "stats", label: "Statistika", icon: BarChart3 },
 ];

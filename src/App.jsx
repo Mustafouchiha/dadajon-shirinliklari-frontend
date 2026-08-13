@@ -22,11 +22,11 @@ const savedCart = () => {
 };
 
 const TABS = [
-  { id: "home", label: "Home", icon: HomeIcon },
-  { id: "catalog", label: "Catalog", icon: CakeSlice },
-  { id: "cart", label: "Cart", icon: ShoppingCart },
-  { id: "orders", label: "Orders", icon: Package },
-  { id: "profile", label: "Profile", icon: User },
+  { id: "home", label: "Bosh sahifa", icon: HomeIcon },
+  { id: "catalog", label: "Katalog", icon: CakeSlice },
+  { id: "cart", label: "Savat", icon: ShoppingCart },
+  { id: "orders", label: "Buyurtmalar", icon: Package },
+  { id: "profile", label: "Profil", icon: User },
 ];
 
 function Badge({ count }) {
@@ -247,11 +247,11 @@ export default function App() {
                 <button
                   key={t.id}
                   onClick={() => setNav(t.id)}
-                  className="relative flex flex-col items-center gap-0.5 px-2 py-1"
+                  className="relative flex flex-col items-center gap-0.5 px-1.5 py-1 min-w-0"
                 >
                   <Icon size={20} strokeWidth={active ? 2.1 : 1.7} className={active ? "text-[#A93446]" : "text-[#B9A793]"} />
                   {t.id === "cart" && <Badge count={cartCount} />}
-                  <span className={`text-[9.5px] ${active ? "text-[#A93446] font-semibold" : "text-[#B9A793]"}`}>
+                  <span className={`text-[9.5px] whitespace-nowrap ${active ? "text-[#A93446] font-semibold" : "text-[#B9A793]"}`}>
                     {t.label}
                   </span>
                 </button>
