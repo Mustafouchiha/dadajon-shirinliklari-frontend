@@ -204,7 +204,7 @@ export default function App() {
 
   if (booting) return <LoadingSplash />;
 
-  if (!loggedIn && nav === "login") {
+  if (!loggedIn && (nav === "login" || nav === "orders" || nav === "profile")) {
     return <LoginPage onLogin={handleLogin} appLogo={appLogo} />;
   }
 
@@ -224,11 +224,9 @@ export default function App() {
   } else if (nav === "cart") {
     content = <CartPage cart={cart} updateQty={updateQty} goCatalog={() => setNav("catalog")} goCheckout={goCheckout} />;
   } else if (nav === "orders") {
-    content = loggedIn ? <OrdersPage /> : <LoginPage onLogin={handleLogin} appLogo={appLogo} />;
+    content = <OrdersPage />;
   } else {
-    content = loggedIn
-      ? <ProfilePage user={user} setUser={(u) => { setUser(u); localStorage.setItem("dt_user", JSON.stringify(u)); }} isOperator={isOperator} onOpenOperator={() => setOperatorOpen(true)} onLogout={handleLogout} />
-      : <LoginPage onLogin={handleLogin} appLogo={appLogo} />;
+    content = <ProfilePage user={user} setUser={(u) => { setUser(u); localStorage.setItem("dt_user", JSON.stringify(u)); }} isOperator={isOperator} onOpenOperator={() => setOperatorOpen(true)} onLogout={handleLogout} />;
   }
 
   const showNav = !checkoutOpen && !successOrder && !operatorOpen;
